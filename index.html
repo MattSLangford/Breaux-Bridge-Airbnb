@@ -137,16 +137,20 @@
             </div>
         </div>
 
-        <p class="disclaimer">All bookings must be made through Airbnb. Send us an email: <span id="email-container"></span></p>
+        <p class="disclaimer">All bookings must be made through Airbnb.<br><span id="email-container"></span></p>
     </div>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         var user = "booking";
         var domain = "breauxbridgeairbnb.com";
+        var subject = "Airbnb Inquiry";
         var email = user + "@" + domain;
+        var mailtoLink = "mailto:" + email + "?subject=" + encodeURIComponent(subject);
+
         var link = document.createElement("a");
-        link.href = "mailto:" + email;
+        link.href = mailtoLink;
         link.textContent = email;
+
         document.getElementById("email-container").appendChild(link);
       });
     </script>
